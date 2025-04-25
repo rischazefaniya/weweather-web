@@ -1,0 +1,34 @@
+.banner {
+  background-image: url(assets/style/cuaca1.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 20%;
+  padding-bottom: 30%;
+  color: #fff;
+}
+
+.temperature {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+.description {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #fff;
+  font-size: 1, 1875em;
+}
+
+.place {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #fff;
+}
+
+.date h5,
+.date h5 {
+  display: inline;
+}
+
+.card {
+  background-color: #8eaccd;
+}
