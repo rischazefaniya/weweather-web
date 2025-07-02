@@ -1,86 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Station</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg shadow-lg fixed-top" style="background-color: #d2e0fb">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">We-Weather</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse text-right" id="navbarText">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="today.html">Today</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hourly.html">Hourly</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="tenday.html">10 Day</a>
-            </li>
-          </ul>
-        </div>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cuaca 10 Hari Terakhir</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/icons/hujan2.svg" type="image/png" />
+  
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg shadow-lg fixed-top" style="background-color:#d2e0fb">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">We-Weather</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navText">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navText">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="today.html">Today</a></li>
+          <li class="nav-item"><a class="nav-link" href="hourly.html">Hourly</a></li>
+          <li class="nav-item"><a class="nav-link" href="tenday.html">10 Day</a></li>
+        </ul>
       </div>
-    </nav>
-    <div class="container mt-5 pt-5">
-      <div class="container text-center">
-        <h2 class="display-3" id="today">Data Cuaca 10 Hari Kebelakang</h2>
-      </div>
-      <div class="row" id="weather-cards"></div>
     </div>
-    <script>
-      // Fungsi untuk menampilkan 10 hari terakhir
-      function displayWeatherCards() {
-        const container = document.getElementById("weather-cards");
-        const today = new Date(); // Mendapatkan tanggal hari ini
+  </nav>
 
-        // Loop untuk membuat 10 kartu cuaca
-        for (let i = 0; i < 10; i++) {
-          let pastDate = new Date(today);
-          pastDate.setDate(today.getDate() - (i + 1)); // Mengurangi i hari
+  <div class="container pt-5 pb-5">
+    <h2 class="text-center mb-4">Riwayat Cuaca 10 Hari Terakhir</h2>
+    <div class="text-center mb-4">
+      <label>Pilih Lokasi:</label>
+      <select id="lokasiSelect" class="form-select w-auto d-inline-block">
+        <option value="Cikapundung">Cikapundung</option>
+        <option value="Cipalasari">Cipalasari</option>
+      </select>
+    </div>
+    <div class="row" id="history-cards"></div>
+  </div>
 
-          // Format tanggal (contoh: "12 Desember 2024")
-          const options = { year: "numeric", month: "long", day: "numeric" };
-          const formattedDate = pastDate.toLocaleDateString("id-ID", options);
-
-          // Menggunakan gambar cloudy.png untuk semua kartu
-          const weatherImageURL = "assets/style/cloudy.png";
-
-          // Membuat elemen kartu
-          const card = document.createElement("div");
-          card.classList.add("col-md-4", "mb-4");
-
-          card.innerHTML = `
-              <div class="card shadow-sm position-relative">
-                <div class="card-body">
-                  <!-- Gambar cuaca di kanan atas -->
-                  <img src="${weatherImageURL}" alt="Weather Icon" class="position-absolute top-0 end-0 p-2" style="width: 100px; height: 100px;">
-                  <h5 class="card-title">${formattedDate}</h5>
-                  <p class="card-text"><strong>Suhu:</strong></p>
-                  <p class="card-text"><strong>Kelembapan:</strong></p>
-                  <p class="card-text"><strong>Tekanan Udara:</strong></p>
-                  <p class="card-text"><strong>Curah Hujan:</strong></p>
-                </div>
-              </div>
-            `;
-
-          container.appendChild(card); // Menambahkan kartu ke dalam container
-        }
-      }
-
-      // Menampilkan kartu cuaca saat halaman dimuat
-      displayWeatherCards();
-    </script>
-
-    <!-- Bootstrap JS dan dependensi -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
 </html>

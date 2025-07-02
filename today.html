@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Station</title>
+    <title>WeWeather</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="script.js"></script>
+    <script type="module" src="script.js?v=2"></script>
+    <link rel="icon" type="image/png" href="assets/icons/berawan.svg">
+    
   </head>
   <body>
     <!-- Navbar -->
@@ -40,6 +42,7 @@
         <div class="date">
           <h5 class="day" id="day"></h5>
           <h5 class="month" id="month"></h5>
+          <h5>2025</h5>
         </div>
         <div class="row">
           <div class="col-sm-6">
@@ -48,8 +51,8 @@
                 <article>
                   <div class="ikonCuaca"></div>
                   <div class="dataCuaca">
-                    <img src="assets/style/today.png" alt="Weather Icon" class="position-absolute top-0 end-0 p-2" style="width: 170px; height: 170px" />
-                    <h5 class="place">BBWS Cikapundung, Kecamatan Cidadap, Kota Bandung</h5>
+                    <img src="assets/icons" id="iconCuacaCKP" alt="Cuaca Icon" class="position-absolute top-0 end-0 p-2" style="width: 170px; height: 170px" />
+                    <h5 class="place">Cikapundung, Cidadap, Kota Bandung</h5>
                     <h1 class="temperature" id = "tempCKP">27&deg;C</h1>
                     <div style="display: flex;align-items: center;">
                       <h3 class="description" id="cuacaCKP">Cerah</h3>
@@ -66,10 +69,13 @@
                 <article>
                   <div class="ikonCuaca"></div>
                   <div class="dataCuaca">
-                    <img src="assets/style/today.png" alt="Weather Icon" class="position-absolute top-0 end-0 p-2" style="width: 170px; height: 170px" />
-                    <h5 class="place">Cipalasari, Bandung</h5>
-                    <h1 class="temperature">28&deg;C</h1>
-                    <h3 class="description">Hujan</h3>
+                   <img src="assets/icons" id="iconCuacaCPL" alt="Cuaca Icon" class="position-absolute top-0 end-0 p-2" style="width: 170px; height: 170px" />
+                    <h5 class="place">Polder Cipalasari, Dayeuhkolot, Kabupaten Bandung</h5>
+                    <h1 class="temperature" id="tempCPL">28&deg;C</h1>
+                    <div style="display: flex;align-items: center;">
+                      <h3 class="description" id="cuacaCPL">Cerah</h3>
+                      <h3 class="description" id="anginCPL"></h3>
+                    </div>
                   </div>
                 </article>
               </div>
@@ -99,7 +105,7 @@
           <div class="card">
             <div class="card-body">
               <h3>Tekanan Udara</h3>
-              <p>20 km/jam</p>
+              <p id="presCPL">20 km/jam</p>
             </div>
           </div>
         </div>
@@ -124,7 +130,7 @@
         <div class="col-sm-6 col-lg-3 mb-4">
           <div class="card">
             <div class="card-body">
-              <h3>Humidity</h3>
+              <h3>Kelembapan Udara</h3>
               <p id = "humCKP">80%</p>
             </div>
           </div>
@@ -133,15 +139,15 @@
           <div class="card">
             <div class="card-body">
               <h3>Arah Angin</h3>
-              <p>5</p>
+              <p id = "arahCPL">--</p>
             </div>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3 mb-4">
           <div class="card">
             <div class="card-body">
-              <h3>Humidity</h3>
-              <p>28%</p>
+              <h3>Kelembapan Udara</h3>
+              <p id="humCPL">28%</p>
             </div>
           </div>
         </div>
@@ -159,7 +165,7 @@
           <div class="card">
             <div class="card-body">
               <h3>Curah Hujan</h3>
-              <p>6.5</p>
+              <p id="curahCKP">6.5</p>
             </div>
           </div>
         </div>
@@ -167,7 +173,7 @@
           <div class="card">
             <div class="card-body">
               <h3>Kecepatan Angin</h3>
-              <p>3</p>
+              <p id="aneCPL">3</p>
             </div>
           </div>
         </div>
@@ -175,7 +181,7 @@
           <div class="card">
             <div class="card-body">
               <h3>Curah Hujan</h3>
-              <p>400 ppm</p>
+              <p id="curahCPL">400 ppm</p>
             </div>
           </div>
         </div>
