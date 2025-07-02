@@ -7,8 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="script.js?v=2"></script>
-    <link rel="icon" type="image/png" href="assets/icons/berawan.svg">
-    
+    <link rel="icon" type="image/png" href="assets/icons/berawan.svg" />
   </head>
   <body>
     <!-- Navbar -->
@@ -34,16 +33,19 @@
       </div>
     </nav>
     <!-- End Navbar -->
+
     <section>
-      <div class="container-fluid pt-5 pb-5">
+      <div class="container-fluid pt-5 pb-5 mt-5">
         <div class="container text-center">
           <h2 class="display-3" id="today">Today's weather</h2>
         </div>
-        <div class="date">
+
+        <div class="date text-center">
           <h5 class="day" id="day"></h5>
           <h5 class="month" id="month"></h5>
           <h5>2025</h5>
         </div>
+
         <div class="row">
           <div class="col-sm-6">
             <div class="card">
@@ -51,30 +53,31 @@
                 <article>
                   <div class="ikonCuaca"></div>
                   <div class="dataCuaca">
-                    <img src="assets/icons" id="iconCuacaCKP" alt="Cuaca Icon" class="position-absolute top-0 end-0 p-2" style="width: 170px; height: 170px" />
+                    <img src="assets/icons" id="iconCuacaCKP" alt="Cuaca Icon" class="img-fluid position-absolute top-0 end-0 p-2" style="width: 170px" />
                     <h5 class="place">Cikapundung, Cidadap, Kota Bandung</h5>
-                    <h1 class="temperature" id = "tempCKP">27&deg;C</h1>
-                    <div style="display: flex;align-items: center;">
+                    <h1 class="temperature" id="tempCKP">27&deg;C</h1>
+                    <div class="d-flex flex-column flex-md-row align-items-center">
                       <h3 class="description" id="cuacaCKP">Cerah</h3>
-                      <h3 class="description" id="anginCKP">Arah Angin: -</h3>
+                      <h3 class="description ms-md-3" id="anginCKP">Arah Angin: -</h3>
                     </div>
                   </div>
                 </article>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
+
+          <div class="col-sm-6 mt-4 mt-sm-0">
             <div class="card">
               <div class="card-body">
                 <article>
                   <div class="ikonCuaca"></div>
                   <div class="dataCuaca">
-                   <img src="assets/icons" id="iconCuacaCPL" alt="Cuaca Icon" class="position-absolute top-0 end-0 p-2" style="width: 170px; height: 170px" />
+                    <img src="assets/icons" id="iconCuacaCPL" alt="Cuaca Icon" class="img-fluid position-absolute top-0 end-0 p-2" style="width: 170px" />
                     <h5 class="place">Polder Cipalasari, Dayeuhkolot, Kabupaten Bandung</h5>
                     <h1 class="temperature" id="tempCPL">28&deg;C</h1>
-                    <div style="display: flex;align-items: center;">
+                    <div class="d-flex flex-column flex-md-row align-items-center">
                       <h3 class="description" id="cuacaCPL">Cerah</h3>
-                      <h3 class="description" id="anginCPL"></h3>
+                      <h3 class="description ms-md-3" id="anginCPL"></h3>
                     </div>
                   </div>
                 </article>
@@ -82,106 +85,118 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Tekanan Udara</h3>
-              <p id="presCKP">20</p>
+        <!-- Data Rows -->
+        <div class="row mt-5">
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Tekanan Udara</h3>
+                <p id="presCKP">20</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Tinggi Muka Air</h3>
+                <p id="tmaCKP">3 meter</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Tekanan Udara</h3>
+                <p id="presCPL">20 km/jam</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Tinggi Muka Air</h3>
+                <p>- mm</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Tinggi Muka Air</h3>
-              <p id="tmaCKP">3 meter</p>
+
+        <div class="row">
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Arah Angin</h3>
+                <p id="arahCKP">Utara</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Kelembapan Udara</h3>
+                <p id="humCKP">80%</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Arah Angin</h3>
+                <p id="arahCPL">--</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Kelembapan Udara</h3>
+                <p id="humCPL">28%</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Tekanan Udara</h3>
-              <p id="presCPL">20 km/jam</p>
+
+        <div class="row">
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Kecepatan Angin</h3>
+                <p id="aneCKP">60%</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Tinggi Muka Air</h3>
-              <p>- mm</p>
+
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Curah Hujan</h3>
+                <p id="curahCKP">6.5</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Arah Angin</h3>
-              <p id = "arahCKP">Utara</p>
+
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Kecepatan Angin</h3>
+                <p id="aneCPL">3</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Kelembapan Udara</h3>
-              <p id = "humCKP">80%</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Arah Angin</h3>
-              <p id = "arahCPL">--</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Kelembapan Udara</h3>
-              <p id="humCPL">28%</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Kecepatan Angin</h3>
-              <p id="aneCKP">60%</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Curah Hujan</h3>
-              <p id="curahCKP">6.5</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Kecepatan Angin</h3>
-              <p id="aneCPL">3</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3>Curah Hujan</h3>
-              <p id="curahCPL">400 ppm</p>
+
+          <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h3>Curah Hujan</h3>
+                <p id="curahCPL">400 ppm</p>
+              </div>
             </div>
           </div>
         </div>

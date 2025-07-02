@@ -32,3 +32,30 @@
 .card {
   background-color: #8eaccd;
 }
+.card-body {
+  min-height: 110px;
+}
+
+img#iconCuacaCKP,
+img#iconCuacaCPL {
+  max-width: 100%;
+  height: auto;
+}
+
+.dataCuaca {
+  padding-top: 10px;
+}
+
+@media (max-width: 576px) {
+  .dataCuaca h1 {
+    font-size: 1.8rem;
+  }
+
+  .dataCuaca h3 {
+    font-size: 1rem;
+  }
+
+  .date h5 {
+    font-size: 1rem;
+  }
+}
